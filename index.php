@@ -14,7 +14,7 @@
     <!-- Log in -->
         <div class="box">
             <div class="form-box login">
-                <h2>ADMIN LOG IN</h2>
+                <h2>kahit ano</h2>
                 <form action="conn/dbconn.php" method="post">
                     <div class="input">
                     <input type="text" name="username" required>

@@ -14,8 +14,8 @@
     <!-- Log in -->
         <div class="box">
             <div class="form-box login">
-                <h2>Ay hello ganda</h2>
-                <form action="conn/dbconn.php" method="post">
+                <h2>Admin</h2>
+                <form action="dashb.php" method="post">
                     <div class="input">
                     <input type="text" name="username" required>
                         <label>USERNAME</label><br>
@@ -39,7 +39,7 @@
 <!-- Registration -->
             <div class="form-box register">
                 <h2>Sign Up</h2>
-                <form action="conn/dbconn.php" method="post">
+                <form action="dashb.php" method="post">
                     <div class="input">
                         <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
                         <label>USERNAME</label>
@@ -64,33 +64,7 @@
             </div>
 
         </div>
-        
-<?php
-if(isset($_POST['login']))
-{$u=$_POST['username'];
- $p=$_POST['password'];
- 
-
- $sql="SELECT * from 'users' where username='$u'";
-
- $result = $conn->query($sql);
-$row = $result->fetch_assoc();
-$x=$row['password'];
-if(strcasecmp($x,$p)==0 && !empty($u) && !empty($p))
-  {//echo "Login Successful";
-   $_SESSION['username']=$u;
-
-   header('location:admin/index.php');
-        
-  }
-else 
- { echo "<script type='text/javascript'>alert('Failed to Login! Incorrect Username or Password')</script>";
-}
-   
-
-}
-
-?>
+    
 
 
         <script src="js/script.js"></script>

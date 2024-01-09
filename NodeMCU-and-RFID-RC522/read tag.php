@@ -25,15 +25,21 @@
 			display: inline-block;
 			margin: 0px auto;
 			text-align: center;
+			padding-top: 40px;
 		}
 
 		ul.topnav {
 			list-style-type: none;
 			margin: auto;
-			padding: 0;
 			overflow: hidden;
-			background-color: #4CAF50;
-			width: 70%;
+			
+			position: fixed;
+    		top: 0;
+    		left: 0;
+    		width: 100%;
+    		background: #379c44;
+    		height: 60px;
+   			z-index: 100;
 		}
 
 		ul.topnav li {float: left;}
@@ -42,8 +48,9 @@
 			display: block;
 			color: white;
 			text-align: center;
-			padding: 14px 16px;
+			padding: 20px 100px;
 			text-decoration: none;
+			height: 60px;
 		}
 
 		ul.topnav li a:hover:not(.active) {background-color: #3e8e41;}

@@ -35,7 +35,7 @@
                         </li>
                         
                         <li class="navlink">
-                            <a href=".//NodeMCU-and-RFID-RC522/home.php">
+                            <a href=".//NodeMCU-and-RFID-RC522/user data.php">
                                 <span class="icon"><ion-icon name="body-outline"></ion-icon></span>
                                 <span class="navtext text">Student log</span>
                             </a>

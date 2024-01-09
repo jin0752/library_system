@@ -17,6 +17,7 @@
 			display: inline-block;
 			margin: 0px auto;
 			text-align: center;
+			padding-top: 40px;
 		}
 
 		ul.topnav {

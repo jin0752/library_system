@@ -23,14 +23,15 @@ var options = {
     data: [44, 55, 57, 56, 61, 58, 63, 60, 66, 70, 71, 75]
   }, {
     name: 'Number of Books',
-    data: [76, 85, 100, 98, 87, 100, 91, 114, 94, 90, 85, 87]
+    data: [76, 85, 92, 98, 87, 92, 91, 97, 94, 90, 85, 87]
   }, {
     name: 'Working Computers',
     data: [35, 41, 36, 26, 45, 48, 52, 53, 41, 45, 48, 50]
   }],
     chart: {
     type: 'bar',
-    height: 350
+    height: 350,
+    width: 1155
   },
   plotOptions: {
     bar: {
@@ -52,7 +53,7 @@ var options = {
   },
   yaxis: {
     title: {
-      text: 'Report'
+      text: 'Monthly Report'
     }
   },
   fill: {

@@ -46,7 +46,7 @@ if (isset($_POST['login'])) {
         if (password_verify($password, $row->password)) {
             // Password is correct
             $_SESSION['user'] = $row;
-            header('Location: Dashboard.php');
+            header('Location: dashboard.php');
             exit();
         } else {
             // Password is incorrect

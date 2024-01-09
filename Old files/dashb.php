@@ -19,7 +19,7 @@ if (!isset($_SESSION['username'])) {
 <header>
     
 </header>
-    <div class="bar"><?php require "sidebar.php"?></div>
+    <div class="bar"><?php require "dashboard.php"?></div>
     <body>
         <main>
             <h1 class="title">Dashboard</h1>

@@ -3,7 +3,7 @@
 	{
 		private static $dbName = 'librarysystem' ;
 		private static $dbHost = 'localhost' ;
-		private static $dbUsername = 'Capstone';
+		private static $dbUsername = 'root';
 		private static $dbUserPassword = '';
 		 
 		private static $cont  = null;

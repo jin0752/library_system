@@ -1,74 +1,74 @@
-
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-        <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
-        <link rel="stylesheet" href="css/dashboard.css">
-        <link rel="icon" href="img/logo.png" type="image/icon type">
-        
-    </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <title>Dashboard</title>
+    <link rel="icon" href="img/logo.png" type="image/icon type">
+</head>
+<header>
+    
+</header>
+    <div class="bar"><?php require "sidebar.php"?></div>
     <body>
-        <nav class="sidebar close">
-            <div class="header"> 
-                <div class="image-text">
-                    <span class="image">
-                        <img class="logo" src="img/logo.png" alt="logo">
-                    </span>
-
-                    <div class="text header-text">
-                        <span class="name">Cvsu Imus</span>
-                        <span class="sec">Library System</span>
+        <main>
+            <h1 class="title">Dashboard</h1>
+            <div class="info-card">
+                <div class="card">
+                    <div class="head">
+                        <div>
+                            <h2>Number of Students</h2>
+                            <p>30</p>
+                        </div>
+                        <ion-icon name="people-outline"></ion-icon>
+                    </div>
+                    <span class="progress" data-value="30%"></span>
+                    <span class="label">30%</span>
+                </div>
+                <div class="card">
+                    <div class="head">
+                        <div>
+                            <h2>Number of Books</h2>
+                            <p>30</p>
+                        </div>
+                        <ion-icon name="book-outline"></ion-icon>
+                    </div>
+                    <span class="progress" data-value="70%"></span>
+                    <span class="label">70%</span>
+                </div>
+                <div class="card">
+                    <div class="head">
+                        <div>
+                            <h2>Working Computers</h2>
+                            <p>20</p>
+                        </div>
+                        <ion-icon name="desktop-outline"></ion-icon>
+                    </div>
+                    <span class="progress" data-value="100%"></span>
+                    <span class="label">100%</span>
+                </div>
+            </div>
+            <div class="data">
+                <div class="content-data">
+                    <div class="head">
+                    <h3>Yearly Report</h3>
+                    <div class="menu">
+                    <div class="icon"><ion-icon name="ellipsis-horizontal-outline"></ion-icon></div>
+                        <ul class="menu-link">
+                            <li><a href="#">Edit</a></li>
+                            <li><a href="#">Save</a></li>
+                            <li><a href="#">Delete</a></li>
+                        </ul>
                     </div>
                 </div>
-                <span class="arrow"><ion-icon name="chevron-forward-outline"></ion-icon></span>
-                
-            </div>
-            <div class="menu-bar">
-                <div class="menu">
-                    <ul class="menlinks">
-
-                    <li class="navlink">
-                            <a href="dashb.php">
-                                <span class="icon"><ion-icon name="clipboard-outline"></ion-icon></span>
-                                <span class="navtext text">Dashboard</span>
-                            </a>
-                        </li>
-                        
-                        <li class="navlink">
-                            <a href="studentlog.php">
-                                <span class="icon"><ion-icon name="body-outline"></ion-icon></span>
-                                <span class="navtext text">Student log</span>
-                            </a>
-                        </li>
-
-                        <li class="navlink">
-                            <a href="booklist.php">
-                                <span class="icon"><ion-icon name="book-outline"></ion-icon></span>
-                                <span class="navtext text">Book list</span>
-                            </a>
-                        </li>
-
-                        <li class="navlink">
-                            <a href="editing.php">
-                                <span class="icon"><ion-icon name="create-outline"></ion-icon></span>
-                                <span class="navtext text">Edit UI</span>
-                            </a>
-                        </li>
-                    </ul>
-               
-                    <li class="navlink">
-                        <a href="logout.php">
-                            <span class="icon"><ion-icon name="log-in-outline"></ion-icon></span>
-                            <span class="navtext text">Log out</span>
-                        </a>
-                    </li>
+                <div class="chart">
+                    <div id="chart"></div>
                 </div>
             </div>
-        </nav>
-        
-        <script src="js/dashscript.js"></script>
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+            </div>
+        </main>
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <script src="js/dboard.js"></script>
     </body>
-
 </html>

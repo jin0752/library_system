@@ -83,15 +83,16 @@ if (isset($_POST['login'])) {
                     <form method="POST" action="index.php">
                 <div class="input">
                     <input type="text" name="email" required>
-                    <label>Email</label><br>
+                    <label>Email</label>
                     <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
                 </div>
                 <div class="input">
                     <input type="password" name="password" required>
-                    <label>PASSWORD</label><br>
+                    <label>PASSWORD</label>
                     <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
                 </div>
-                    <input type="submit" value="Login" class="btn" name="login">
+               
+                     <input type="submit" value="Login" class="button" name="login">
                     <div class="add">
                         <p>Add Admin? <a href="#" class="regislink">Create account</a></p>
                     </div>
@@ -122,7 +123,7 @@ if (isset($_POST['login'])) {
                     
                     <label>PASSWORD</label>
                 </div>
-                    <input type="submit" value="Signup" class="btn" name="register">
+                    <input type="submit" value="Signup" class="button" name="register">
                     <div class="add">
                         <p>Already have an account? <a href="#" class="loglink">Sign in</a></p>
                     </div>
@@ -135,21 +136,6 @@ if (isset($_POST['login'])) {
 
     <!-- ... your other scripts ... -->
     <script src="js/script.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // Display login error message
-            var loginErrorMessage = document.getElementById("login-error-message");
-            if (loginErrorMessage && loginErrorMessage.innerText.trim() !== "") {
-                loginErrorMessage.style.display = "block";
-            }
-
-            // Display registration error message (if any)
-            var registrationErrorMessage = document.getElementById("registration-error-message");
-            if (registrationErrorMessage && registrationErrorMessage.innerText.trim() !== "") {
-                registrationErrorMessage.style.display = "block";
-            }
-        });
-    </script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

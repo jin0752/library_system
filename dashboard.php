@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <link rel="stylesheet" href="css/dash.css">
+    <link rel="stylesheet" href="css/dashboard.css">
     <title>Dashboard</title>
     <link rel="icon" href="img/logo.png" type="image/icon type">
 </head>

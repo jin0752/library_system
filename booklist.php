@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bl.css">
+    <link rel="stylesheet" href="css/booklist.css">
     <title>Book Lists</title>
     <link rel="icon" href="img/logo.png" type="image/icon type">
 </head>
@@ -13,7 +13,7 @@
     <header> 
         
     </header>
-    <div class="bar"><?php require "dashboard.php"?></div>   
+    <div class="bar"><?php require "sidebar.php"?></div>   
    
 
     

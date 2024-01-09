@@ -1,4 +1,4 @@
-const box = document.querySelector('.box');
+const box = document.querySelector('.squ');
 const loglink = document.querySelector('.loglink');
 const regislink = document.querySelector('.regislink');
 

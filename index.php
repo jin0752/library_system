@@ -76,11 +76,9 @@ if (isset($_POST['login'])) {
     </header>
 
     <!-- Log in -->
-    <div class="box">
-        <div class="login-box">
+    <div class="squ">
             <div class="form-box login">
                 <h2>Admin Log in</h2>
-                <form method="POST" action="index.php">
                     <!-- ... your login form ... -->
                     <form method="POST" action="index.php">
                 <div class="input">
@@ -100,28 +98,28 @@ if (isset($_POST['login'])) {
                     <div class="error-box" id="login-error-message"></div>
                 </form>
             </div>
-        </div>
 
         <!-- Registration -->
-        <div class="register-box">
             <div class="form-box register">
                 <h2>Sign Up</h2>
-                <form method="POST" action="index.php">
                     <!-- ... your registration form ... -->
                     <form method="POST" action="index.php">
                 <div class="input">
+                <input type="text" name="username" required>
                     <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
                     <label>USERNAME</label>
-                    <input type="text" name="username" required>
+                    
                 </div>
                 <div class="input">
+                <input type="text" name="email" required>
                     <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
                     <label>Email</label>
-                    <input type="text" name="email" required>
+                    
                 </div>
                 <div class="input">
+                <input type="password" name="password" required>
                     <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
-                    <input type="password" name="password" required>
+                    
                     <label>PASSWORD</label>
                 </div>
                     <input type="submit" value="Signup" class="btn" name="register">
@@ -131,9 +129,12 @@ if (isset($_POST['login'])) {
                     <div class="error-box" id="registration-error-message"></div>
                 </form>
             </div>
-        </div>
     </div>
 
+    
+
+    <!-- ... your other scripts ... -->
+    <script src="js/script.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             // Display login error message
@@ -149,9 +150,6 @@ if (isset($_POST['login'])) {
             }
         });
     </script>
-
-    <!-- ... your other scripts ... -->
-    <script src="js/script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

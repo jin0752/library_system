@@ -13,7 +13,7 @@
     <header> 
         
     </header>
-    <div class="bar"><?php require "sidebar.php"?></div>   
+    <div class="bar"><?php require "sidebar.php"?></div>  
    
 
     

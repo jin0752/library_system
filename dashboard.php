@@ -23,8 +23,7 @@
                         </div>
                         <ion-icon name="people-outline"></ion-icon>
                     </div>
-                    <span class="progress" data-value="30%"></span>
-                    <span class="label">30%</span>
+                    
                 </div>
                 <div class="card">
                     <div class="head">
@@ -34,8 +33,7 @@
                         </div>
                         <ion-icon name="book-outline"></ion-icon>
                     </div>
-                    <span class="progress" data-value="70%"></span>
-                    <span class="label">70%</span>
+                    
                 </div>
                 <div class="card">
                     <div class="head">
@@ -45,8 +43,7 @@
                         </div>
                         <ion-icon name="desktop-outline"></ion-icon>
                     </div>
-                    <span class="progress" data-value="100%"></span>
-                    <span class="label">100%</span>
+                    
                 </div>
             </div>
             <div class="data">

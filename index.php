@@ -94,7 +94,7 @@ if (isset($_POST['login'])) {
                
                      <input type="submit" value="Login" class="button" name="login">
                     <div class="add">
-                        <p>Add Admin? <a href="#" class="regislink">Create account</a></p>
+                        <a href="#" class="regislink">Create account</a>
                     </div>
                     <div class="error-box" id="login-error-message"></div>
                 </form>
@@ -108,7 +108,7 @@ if (isset($_POST['login'])) {
                 <div class="input">
                 <input type="text" name="username" required>
                     <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
-                    <label>USERNAME</label>
+                    <label>Username</label>
                     
                 </div>
                 <div class="input">
@@ -121,7 +121,7 @@ if (isset($_POST['login'])) {
                 <input type="password" name="password" required>
                     <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
                     
-                    <label>PASSWORD</label>
+                    <label>Password</label>
                 </div>
                     <input type="submit" value="Signup" class="button" name="register">
                     <div class="add">

@@ -1,7 +1,7 @@
 <?php
 require_once 'database.php';
 session_start();
-$invalid=0;
+
 if (isset($_POST['register'])) {
     // Registration code with prepared statement and password_hash
     $username = $_POST['username'];
@@ -15,6 +15,15 @@ if (isset($_POST['register'])) {
     $hashed_cpassword = password_hash($cpassword, PASSWORD_BCRYPT);
 
     $sql = $connection->prepare('INSERT INTO users (username, fname, mname, lname, email, password, cpassword) VALUES (?, ?, ?, ?, ?, ?, ?)');
+    
+    if ($password === $cpassword) {
+        // Passwords match, you can proceed with further processing or store the password.
+        echo "<script type='text/javascript'> alert('Password match'); </script>";
+    } else {
+        // Passwords do not match, display an error message.
+        echo '<script id="registration-error-message"> alert("Password not match"); </script>';
+        exit();
+    }
 
     // Check for errors in the prepared statement
     if ($sql === false) {
@@ -22,8 +31,8 @@ if (isset($_POST['register'])) {
     }
 
     $sql->bind_param('sssssss', $username, $fname, $mname, $fname, $email, $hashed_password, $hashed_cpassword);
-
-    if ($sql->execute()) { 
+    
+    if ($sql->execute()) {
         echo "<script type='text/javascript'> alert('Registered successfully'); </script>";
     } else {
         echo '<script id="registration-error-message"> alert("Registration Failed"); </script>';

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 09, 2024 at 05:16 PM
+-- Generation Time: Jan 12, 2024 at 04:35 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -79,20 +79,27 @@ INSERT INTO `table_the_iot_projects` (`name`, `id`, `gender`, `email`, `mobile`)
 CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
+  `fname` varchar(250) NOT NULL,
+  `mname` varchar(250) NOT NULL,
+  `lname` varchar(250) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `cpassword` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
-(2, 'Preityantoinette', 'gandaa', '$2y$10$hIJKVRQMYYvwmsS4EBezSepuwI9FTBagTSDU6jzISDJixz5rKAEi6'),
-(8, 'preuty', 'preity', '$2y$10$B7FJ1agooVOGbCF8kB427efSABsd2WSjjh4MoOpSlQDnJ58yODcU2'),
-(9, 'albert', 'albert', '$2y$10$2IUmIsh1mWJoZk.MbUM.du0e1IXR/OJi9SSIYE2ES1.wQQw1sfng2'),
-(10, 'rivera', 'rivera', '$2y$10$L8ikLsbPKKbkf94Rh.DO1u2g3.j7s6wDRe5W52ZHqKQwgFdM7rpgu'),
-(11, 'jin', 'jin123', '$2y$10$l0LSFC0697KiRhqnpWcYheTkRBhf1waeWGsFXzz1VWnmi/BPX7Z92');
+INSERT INTO `users` (`id`, `username`, `fname`, `mname`, `lname`, `email`, `password`, `cpassword`) VALUES
+(2, 'Preityantoinette', '', '', '', 'gandaa', '$2y$10$hIJKVRQMYYvwmsS4EBezSepuwI9FTBagTSDU6jzISDJixz5rKAEi6', ''),
+(8, 'preuty', '', '', '', 'preity', '$2y$10$B7FJ1agooVOGbCF8kB427efSABsd2WSjjh4MoOpSlQDnJ58yODcU2', ''),
+(9, 'albert', '', '', '', 'albert', '$2y$10$2IUmIsh1mWJoZk.MbUM.du0e1IXR/OJi9SSIYE2ES1.wQQw1sfng2', ''),
+(10, 'rivera', '', '', '', 'rivera', '$2y$10$L8ikLsbPKKbkf94Rh.DO1u2g3.j7s6wDRe5W52ZHqKQwgFdM7rpgu', ''),
+(11, 'jin', '', '', '', 'jin123', '$2y$10$l0LSFC0697KiRhqnpWcYheTkRBhf1waeWGsFXzz1VWnmi/BPX7Z92', ''),
+(13, 'jin123', 'albert son', 'purificacion', 'albert son', 'albert@sample.com', '$2y$10$Np1QatwfRg.W9G3IKWepaubbiz6na9E92NDRNTdMrb0.d8UyJnVHa', ''),
+(14, 'admin', 'albert ', 'pds', 'albert ', 'dsadsa', '$2y$10$8Nm4hGMnNvKq8S0qTGv1ke60zPWbAM./LClQpV0cSgcCX1QbNQktS', '$2y$10$hKzkJqM2xoDHV51TgEEvj.1WV/SAC5vIc00g5PPgpB6Wf.cbdgj/q'),
+(15, 'dsadsa', 'sdadsa', 'dsadsa', 'sdadsa', 'sdaasd', '$2y$10$7slFz2f4cf7mcj4wEr/6meS1gCtQ5c43ra1tGjo3io0FkZhTCwNkK', '$2y$10$ICGFwOuRdbKnpv2gRBknwODnds4gpNuil6q2uoSMa1b3V/sc/ZdQ2');
 
 --
 -- Indexes for dumped tables
@@ -119,7 +126,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

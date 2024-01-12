@@ -47,7 +47,6 @@ header .logo {
     box-shadow: 0 0 30px rgba(0, 0, 0, .5);
     display: flex;
     justify-content: center;
-    align-items: center; /* Add this line */
     overflow: hidden;
     transition: height .2s ease;
 }
@@ -55,6 +54,8 @@ header .logo {
 
 .squ.active {
     height: 500px;
+    overflow: hidden;  
+    overflow-y: scroll;
 }
 
 .squ .form-box {
@@ -65,17 +66,20 @@ header .logo {
 .squ .form-box.login {
     transition: transform .18s ease;
     transform: translateX(0);
+    
 }
 
 .squ.active .form-box.login {
     transition: none;
     transform: translateX(-400px);
+    
 }
 
 .squ .form-box.register {
     position: absolute;
     transition: none;
     transform: translateX(400px);
+ 
 }
 
 .squ.active .form-box.register {

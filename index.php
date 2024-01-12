@@ -1,24 +1,29 @@
 <?php
 require_once 'database.php';
 session_start();
-
+$invalid=0;
 if (isset($_POST['register'])) {
     // Registration code with prepared statement and password_hash
     $username = $_POST['username'];
+    $fname = $_POST['fname'];
+    $mname = $_POST['mname'];
+    $lname = $_POST['lname'];
     $email = $_POST['email'];
     $password = $_POST['password'];
+    $cpassword = $_POST['cpassword'];
     $hashed_password = password_hash($password, PASSWORD_BCRYPT);
+    $hashed_cpassword = password_hash($cpassword, PASSWORD_BCRYPT);
 
-    $sql = $connection->prepare('INSERT INTO users (username, email, password) VALUES (?, ?, ?)');
+    $sql = $connection->prepare('INSERT INTO users (username, fname, mname, lname, email, password, cpassword) VALUES (?, ?, ?, ?, ?, ?, ?)');
 
     // Check for errors in the prepared statement
     if ($sql === false) {
         die('Error in the registration prepared statement: ' . $connection->error);
     }
 
-    $sql->bind_param('sss', $username, $email, $hashed_password);
+    $sql->bind_param('sssssss', $username, $fname, $mname, $fname, $email, $hashed_password, $hashed_cpassword);
 
-    if ($sql->execute()) {
+    if ($sql->execute()) { 
         echo "<script type='text/javascript'> alert('Registered successfully'); </script>";
     } else {
         echo '<script id="registration-error-message"> alert("Registration Failed"); </script>';
@@ -108,7 +113,25 @@ if (isset($_POST['login'])) {
                 <div class="input">
                 <input type="text" name="username" required>
                     <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
-                    <label>Username</label>
+                    <label>User Name</label>
+                    
+                </div>
+                <div class="input">
+                <input type="text" name="fname" required>
+                    <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+                    <label>First Name</label>
+                    
+                </div>
+                <div class="input">
+                <input type="text" name="mname" required>
+                    <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+                    <label>Middle Name</label>
+                    
+                </div>
+                <div class="input">
+                <input type="text" name="lname" required>
+                    <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
+                    <label>Last Name</label>
                     
                 </div>
                 <div class="input">
@@ -122,6 +145,12 @@ if (isset($_POST['login'])) {
                     <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
                     
                     <label>Password</label>
+                </div>
+                <div class="input">
+                <input type="password" name="cpassword" required>
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    
+                    <label>Confirm Password</label>
                 </div>
                     <input type="submit" value="Signup" class="button" name="register">
                     <div class="add">

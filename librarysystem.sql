@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 12, 2024 at 04:35 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Jan 13, 2024 at 12:49 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,30 @@ SET time_zone = "+00:00";
 --
 -- Database: `librarysystem`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `books`
+--
+
+CREATE TABLE `books` (
+  `id` int(100) NOT NULL,
+  `cabnum` int(100) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `author` varchar(255) NOT NULL,
+  `year` int(255) NOT NULL,
+  `bookver` varchar(255) NOT NULL,
+  `booknum` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `books`
+--
+
+INSERT INTO `books` (`id`, `cabnum`, `title`, `author`, `year`, `bookver`, `booknum`) VALUES
+(1, 123131, 'fasfafsa', 'fafafa', 1231231, 'fahjkda', 1231321),
+(2, 0, 'Introduction to Linear Algebra with Application', 'Jim DeFranza, Daniel Gagliardi', 2019, 'QA 184.2 D43 2009 copy 1', 3565);
 
 -- --------------------------------------------------------
 
@@ -92,18 +116,23 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `fname`, `mname`, `lname`, `email`, `password`, `cpassword`) VALUES
-(2, 'Preityantoinette', '', '', '', 'gandaa', '$2y$10$hIJKVRQMYYvwmsS4EBezSepuwI9FTBagTSDU6jzISDJixz5rKAEi6', ''),
-(8, 'preuty', '', '', '', 'preity', '$2y$10$B7FJ1agooVOGbCF8kB427efSABsd2WSjjh4MoOpSlQDnJ58yODcU2', ''),
 (9, 'albert', '', '', '', 'albert', '$2y$10$2IUmIsh1mWJoZk.MbUM.du0e1IXR/OJi9SSIYE2ES1.wQQw1sfng2', ''),
 (10, 'rivera', '', '', '', 'rivera', '$2y$10$L8ikLsbPKKbkf94Rh.DO1u2g3.j7s6wDRe5W52ZHqKQwgFdM7rpgu', ''),
 (11, 'jin', '', '', '', 'jin123', '$2y$10$l0LSFC0697KiRhqnpWcYheTkRBhf1waeWGsFXzz1VWnmi/BPX7Z92', ''),
 (13, 'jin123', 'albert son', 'purificacion', 'albert son', 'albert@sample.com', '$2y$10$Np1QatwfRg.W9G3IKWepaubbiz6na9E92NDRNTdMrb0.d8UyJnVHa', ''),
 (14, 'admin', 'albert ', 'pds', 'albert ', 'dsadsa', '$2y$10$8Nm4hGMnNvKq8S0qTGv1ke60zPWbAM./LClQpV0cSgcCX1QbNQktS', '$2y$10$hKzkJqM2xoDHV51TgEEvj.1WV/SAC5vIc00g5PPgpB6Wf.cbdgj/q'),
-(15, 'dsadsa', 'sdadsa', 'dsadsa', 'sdadsa', 'sdaasd', '$2y$10$7slFz2f4cf7mcj4wEr/6meS1gCtQ5c43ra1tGjo3io0FkZhTCwNkK', '$2y$10$ICGFwOuRdbKnpv2gRBknwODnds4gpNuil6q2uoSMa1b3V/sc/ZdQ2');
+(21, 'test', 'admin', 'test', 'admin', 'test@sample.com', '$2y$10$8j3fXnL0fzD2BWSddda77.P/7roc.YvqdHuSe5/TYdhdaQCs5JcF.', '$2y$10$wu./kLHRtF3rE9IgOCg72ecxUTYrsj1gDpwJxeffTm4O08s///TIa'),
+(22, 'bon', 'bonna', 'giatay', 'bonna', 'bon@sample.com', '$2y$10$1vEqBNU9As48mMcx5e7HB.pYrsuGtFL.ki4BErZfBCV3cYWebnXWS', '$2y$10$7L5I//PESFlyoLbw.lTZ6emFNfEwbOgW9TAXn287D1ko/35cUwvuO');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `books`
+--
+ALTER TABLE `books`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `table_the_iot_projects`
@@ -123,10 +152,16 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `books`
+--
+ALTER TABLE `books`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

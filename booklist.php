@@ -1,4 +1,14 @@
+<?php
+include_once ('database.php');
+session_start();
 
+$sql = "SELECT * FROM books";
+$book = $connection->query($sql) or die($connection->error);
+$result = $book->fetch_assoc();
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +29,7 @@
     
     <div class="container"> 
         <h1>Book  List</h1>
-
+    <a href="add_book.php"></a>
     <div class="search-box">
         <input type="text" placeholder="Search...">
         <span class="search">
@@ -27,7 +37,7 @@
         </span>
     </div>
         <div class="bk">
-
+        <p><?php echo $result['title'];?></p>
             <div class="icon">
                 <img src="img/book.png" alt="" />
             </div>

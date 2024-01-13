@@ -163,7 +163,7 @@ if (isset($_POST['login'])) {
                 </div>
                     <input type="submit" value="Signup" class="button" name="register">
                     <div class="add">
-                        <p>Already have an account? <a href="#" class="loglink">Sign in</a></p>
+                        <a href="#" class="loglink">Sign in</a>
                     </div>
                     <div class="error-box" id="registration-error-message"></div>
                 </form>

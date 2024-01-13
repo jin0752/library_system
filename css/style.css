@@ -197,12 +197,14 @@ header .logo {
     text-align: center;
     font-weight: 500;
     margin: 15px 0 10px;
+    padding-left: 62%;
 }
 
 .add p a {
     color: #7F00FF;
     text-decoration: none;
     font-weight: 400;
+    
 }
 
 .add p a:hover {

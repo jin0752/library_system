@@ -16,7 +16,7 @@ if (isset($_POST['register'])) {
 
     $sql = $connection->prepare('INSERT INTO users (username, fname, mname, lname, email, password, cpassword) VALUES (?, ?, ?, ?, ?, ?, ?)');
     
-    if ($password === $cpassword) {
+    if ($password == $cpassword) {
         // Passwords match, you can proceed with further processing or store the password.
         echo "<script type='text/javascript'> alert('Password match'); </script>";
     } else {

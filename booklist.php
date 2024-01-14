@@ -37,7 +37,7 @@ $result = $book->fetch_assoc();
         </span>
     </div>
         <div class="bk">
-        <p><?php echo $result['title'];?></p>
+        <p><?php echo $result['title'];?></p> <!-- ... calling for title in database ... -->
             <div class="icon">
                 <img src="img/book.png" alt="" />
             </div>

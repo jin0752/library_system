@@ -200,14 +200,14 @@ header .logo {
     padding-left: 62%;
 }
 
-.add p a {
-    color: #7F00FF;
+.add a {
+    color: #379c44;
     text-decoration: none;
     font-weight: 400;
     
 }
 
-.add p a:hover {
+.add a:hover {
     text-decoration: underline;
     color: white;
 }

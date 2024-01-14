@@ -2,9 +2,45 @@
 require_once 'database.php';
 session_start();
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+function sendMail($email,$v_code){
+    require ("PHPMailer/PHPMailer.php");
+    require ("PHPMailer/SMTP.php");
+    require ("PHPMailer/Exception.php");
+
+    $mail = new PHPMailer(true);
+    try {
+        $mail->isSMTP();                                            //Send using SMTP
+        $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+        $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+        $mail->Username   = 'librarysystem00@gmail.com';                     //SMTP username
+        $mail->Password   = 'emce crwk rdvt ujpf';                               //SMTP password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+        $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    
+        //Recipients
+        $mail->setFrom('librarysystem00@gmail.com', 'ADMIN');
+        $mail->addAddress($email);     //Add a recipient
+        
+    
+        //Content
+        $mail->isHTML(true);                                  //Set email format to HTML
+        $mail->Subject = 'Email Verification from ADMIN';
+        $mail->Body    = "Thank you for registration!
+        Please click the link to verify your email
+        <a href='http://localhost/library_system/verify.php?email=$email&v_code=$v_code'>Verify</a>";
+    
+        $mail->send();
+        return true;
+    } catch (Exception $e) {
+       return false;
+    }
+}
 if (isset($_POST['register'])) {
     // Registration code with prepared statement and password_hash
-    $username = $_POST['username'];
     $fname = $_POST['fname'];
     $mname = $_POST['mname'];
     $lname = $_POST['lname'];
@@ -13,9 +49,28 @@ if (isset($_POST['register'])) {
     $cpassword = $_POST['cpassword'];
     $hashed_password = password_hash($password, PASSWORD_BCRYPT);
     $hashed_cpassword = password_hash($cpassword, PASSWORD_BCRYPT);
+    $v_code = bin2hex(random_bytes(16));
 
-    $sql = $connection->prepare('INSERT INTO users (username, fname, mname, lname, email, password, cpassword) VALUES (?, ?, ?, ?, ?, ?, ?)');
+    $sql = $connection->prepare('INSERT INTO users (fname, mname, lname, email, password, cpassword, verification_code, is_verified) VALUES (?, ?, ?, ?, ?, ?, ?, 0)');
     
+    // Check for errors in the prepared statement
+    if ($sql === false) {
+        die('Error in the registration prepared statement: ' . $connection->error);
+    }
+
+
+    $sql->bind_param('sssssss', $fname, $mname, $fname, $email, $hashed_password, $hashed_cpassword, $v_code);
+    
+    if ($sql->execute() && sendMail($_POST['email'], $v_code)){
+        echo "<script> alert('Registration Successful');
+        window.location.href='index.php';
+        </script>";
+    }else{
+        echo "<script> alert('Server Down');
+        window.location.href='index.php';
+        </script>";
+    }
+
     if ($password == $cpassword) {
         // Passwords match, you can proceed with further processing or store the password.
         echo "<script type='text/javascript'> alert('Password match'); </script>";
@@ -25,13 +80,6 @@ if (isset($_POST['register'])) {
         exit();
     }
 
-    // Check for errors in the prepared statement
-    if ($sql === false) {
-        die('Error in the registration prepared statement: ' . $connection->error);
-    }
-
-    $sql->bind_param('sssssss', $username, $fname, $mname, $fname, $email, $hashed_password, $hashed_cpassword);
-    
     if ($sql->execute()) {
         echo "<script type='text/javascript'> alert('Registered successfully'); </script>";
     } else {
@@ -57,16 +105,27 @@ if (isset($_POST['login'])) {
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_object();
-        if (password_verify($password, $row->password)) {
-            // Password is correct
-            $_SESSION['user'] = $row;
-            header('Location: dashboard.php');
-            exit();
-        } else {
-            // Password is incorrect
-            echo '<script id="login-error-message"> alert("Wrong password."); </script>';
+        $result_fetch = mysqli_fetch_assoc($result);
+        if($result_fetch['is_verified']==1){
+            if (password_verify($password, $row->password)) {
+                // Password is correct
+                $_SESSION['user'] = $row;
+                header('Location: dashboard.php');
+                exit();
+            } else {
+                // Password is incorrect
+                echo '<script id="login-error-message"> alert("Wrong password."); </script>';
+            }
         }
-    } else {
+            else{
+                echo "<script> alert('Email not verified');
+                window.location.href='index.php';
+                </script>";
+            }
+
+        }
+        
+     else {
         // Email does not exist in the database
         echo '<script id="login-error-message"> alert("Email does not exist."); </script>';
     }
@@ -119,12 +178,6 @@ if (isset($_POST['login'])) {
                 <h2>Sign Up</h2>
                     <!-- ... your registration form ... -->
                     <form method="POST" action="index.php">
-                <div class="input">
-                <input type="text" name="username" required>
-                    <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>
-                    <label>User Name</label>
-                    
-                </div>
                 <div class="input">
                 <input type="text" name="fname" required>
                     <span class="icon"><ion-icon name="person-circle-outline"></ion-icon></span>

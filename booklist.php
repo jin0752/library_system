@@ -6,6 +6,17 @@ $sql = "SELECT * FROM books";
 $book = $connection->query($sql) or die($connection->error);
 $result = $book->fetch_assoc();
 
+if (isset($_POST['add'])){
+    $cabnum = $_POST['cabnum'];
+    $title = $_POST['title'];
+    $author = $_POST['author'];
+    $year = $_POST['year'];
+    $bookver = $_POST['bookver'];
+    $booknum = $_POST['booknum'];
+
+    $sql = "INSERT INTO `books` (`cabnum`,`title`,`author`,`year`,`bookver`,`booknum`)VALUES ('$cabnum','$title','$author','$year','$bookver','$booknum')";
+    $book = $connection->query($sql) or die($connection->error);
+}
 
 
 ?>
@@ -29,7 +40,25 @@ $result = $book->fetch_assoc();
     
     <div class="container"> 
         <h1>Book  List</h1>
-    <a href="add_book.php"></a>
+    <a href="#" id="button" class= "button">Add book</a>
+    
+    <div class ="modal-cont">
+        <div class="modal-content"> 
+        <label>Book Details</label>
+        <div class="close">+</div>
+            <form method="post">
+                
+                <input type="text" name="title" placeholder="Book Title"><br>
+                <input type="text" name="author" placeholder="Author"><br>
+                <input type="text" name="year" placeholder="Year"><br>
+                <input type="text" name="bookver" placeholder="Book Version"><br>
+                <input type="text" name="booknum" placeholder="Book Number"><br>
+                <input type="submit" name="add" value="Add">
+            </form>
+        </div>
+    </div>
+
+
     <div class="search-box">
         <input type="text" placeholder="Search...">
         <span class="search">
@@ -37,7 +66,7 @@ $result = $book->fetch_assoc();
         </span>
     </div>
         <div class="bk">
-         <!-- ... calling for title in database ... -->
+       
             <div class="icon">
                 <img src="img/book.png" alt="" />
             </div>
@@ -47,7 +76,6 @@ $result = $book->fetch_assoc();
                 <p><?php echo $result['year'];?></p>
                 <p><?php echo $result['bookver'];?></p>
                 <p><?php echo $result['booknum']?></p>
-                <p><?php echo $result['cabnum'];?></p>
             </div>
         </div>
 
@@ -160,6 +188,7 @@ $result = $book->fetch_assoc();
 
 </div>
 
+    <script src="js/bl.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

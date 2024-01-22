@@ -36,19 +36,18 @@ $result = $book->fetch_assoc();
         <span class="search-icon"><ion-icon name="search-outline"></ion-icon></span>
         </span>
     </div>
-    
         <div class="bk">
-        <!-- ... <p><?php /* echo $result['title']; */ ?></p>  calling for title in database ... -->
+         <!-- ... calling for title in database ... -->
             <div class="icon">
                 <img src="img/book.png" alt="" />
             </div>
             <div class="content">
-                <h2>Introduction to Linear Algebra with Application</h2>
-                <p>Jim DeFranza, Daniel Gagliardi</p>
-                <p>2019</p>
-                <p>QA 184.2 D43 2009 copy 1</p>
-                <p>3565</p>
-                
+                <h2><p><?php echo $result['title'];?></p></h2>
+                <p><?php echo $result['author'];?></p>
+                <p><?php echo $result['year'];?></p>
+                <p><?php echo $result['bookver'];?></p>
+                <p><?php echo $result['booknum']?></p>
+                <p><?php echo $result['cabnum'];?></p>
             </div>
         </div>
 

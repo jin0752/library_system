@@ -36,8 +36,9 @@ $result = $book->fetch_assoc();
         <span class="search-icon"><ion-icon name="search-outline"></ion-icon></span>
         </span>
     </div>
+    
         <div class="bk">
-        <p><?php echo $result['title'];?></p> <!-- ... calling for title in database ... -->
+        <p><?php echo $result['title'];?></p> <!-- ... calling for title in database     ... -->
             <div class="icon">
                 <img src="img/book.png" alt="" />
             </div>

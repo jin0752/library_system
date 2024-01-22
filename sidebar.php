@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
@@ -48,12 +47,7 @@
                             </a>
                         </li>
 
-                        <li class="navlink">
-                            <a href="editing.php">
-                                <span class="icon"><ion-icon name="create-outline"></ion-icon></span>
-                                <span class="navtext text">Edit UI</span>
-                            </a>
-                        </li>
+                        
                     </ul>
                
                     <li class="navlink">

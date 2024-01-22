@@ -9,7 +9,8 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="utf-8">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+		<link href="css/userdata.css" rel="stylesheet">
 		<script src="js/bootstrap.min.js"></script>
 		<style>
 		html {
@@ -71,7 +72,7 @@
 	
 	<body>
 		<ul class="topnav">
-		<li><a href="../dashboard.php" >Dashboard</a></li>
+		<li><a href="../dashboard.php">Dashboard</a></li>
 			<li><a class="active" href="user data.php">User Data</a></li>
 			<li><a href="registration.php">Registration</a></li>
 			<li><a href="read tag.php">Read Tag ID</a></li>
@@ -91,6 +92,7 @@
 					  <th>Gender</th>
 					  <th>Email</th>
                       <th>Mobile Number</th>
+					  <th>Status</th>
 					  <th>Action</th>
                     </tr>
                   </thead>
@@ -106,9 +108,10 @@
                             echo '<td>'. $row['gender'] . '</td>';
 							echo '<td>'. $row['email'] . '</td>';
 							echo '<td>'. $row['mobile'] . '</td>';
-							echo '<td><a class="btn btn-success" href="user data edit page.php?id='.$row['id'].'">Edit</a>';
+							echo '<td>'. $row['status'] . '</td>';
+							echo '<td><a class="btn btn-success" href="user data edit page.php?id='.$row['id'].'">Update</a>';
 							echo ' ';
-							echo '<a class="btn btn-danger" href="user data delete page.php?id='.$row['id'].'">Delete</a>';
+							echo '<a class="btn btn-danger" href="user data delete page.php?id='.$row['id'].'">Archive</a>';
 							echo '</td>';
                             echo '</tr>';
                    }

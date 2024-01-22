@@ -1,21 +1,21 @@
 <?php
     require 'database.php';
-    $id = 0;
+    $date = 0;
      
-    if ( !empty($_GET['id'])) {
-        $id = $_REQUEST['id'];
+    if ( !empty($_GET['date'])) {
+        $date = $_GET['date'];
     }
      
     if ( !empty($_POST)) {
         // keep track post values
-        $id = $_POST['id'];
+        $date = $_POST['date'];
          
         // delete data
         $pdo = Database::connect();
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        $sql = "DELETE FROM student_logs  WHERE id = ?";
+        $sql = "DELETE FROM student_logs  WHERE date = ?";
         $q = $pdo->prepare($sql);
-        $q->execute(array($id));
+        $q->execute(array($date));
         Database::disconnect();
         header("Location: syslog.php");
          
@@ -42,7 +42,7 @@
 			</div>
 
 			<form class="form-horizontal" action="syslog data delete page.php" method="post">
-				<input type="hidden" name="id" value="<?php echo $id;?>"/>
+				<input type="hidden" name="date" value="<?php echo $date;?>"/>
 				<p class="alert alert-error">Are you sure to delete ?</p>
 				<div class="form-actions">
 					<button type="submit" class="btn btn-danger">Yes</button>

@@ -157,7 +157,7 @@ Database::disconnect();
 }
 </script>
 
-    <title>User Data : NodeMCU V3 ESP8266 / ESP12E with MYSQL Database</title>
+    <title>User Data </title>
 </head>
 
 <body>
@@ -176,21 +176,25 @@ Database::disconnect();
         <div class="row">
             <?php
             // Add a search input for each column
-            $columns = ['ID', 'NAME', 'DATE'];
+            $columns = ['ID',];
             for ($i = 0; $i < count($columns); $i++) {
                 echo '<input type="text" class="search-input" id="searchInput' . $i . '" onkeyup="filterTable(' . $i . ')" placeholder="Search for ' . $columns[$i] . '...">';
             }
             ?>
-            <div>
-                <button onclick="exportTableToPDF()">Export to PDF</button>
-            </div>
+            <!-- For Testing Without Arduino -->
+            <form id="uid-form" method="post" action="getUID.php">
+               <!-- <input type="text" class="search-input" id="UIDresult" name="UIDresult" placeholder="UID Here..." value="">
+                <button type="submit">Simulate ESP8266 UID Transfer</button>-->
+            </form>
+            <div><button onclick="exportTableToPDF()">Export to PDF</button></div>
             <table class="table table-striped table-bordered" id="dataTable">
                 <thead>
                     <tr bgcolor="#379c44" color="#FFFFFF">
                         <th>ID</th>
                         <th>NAME</th>
                         <th>DATE</th>
-                        <th>Action</th>
+                        <th>STATUS</th>
+                       <!-- <th>Action</th>-->
                     </tr>
                 </thead>
                 <tbody>
@@ -200,7 +204,8 @@ Database::disconnect();
                         echo '<td>' . $row['id'] . '</td>';
                         echo '<td>' . $row['name'] . '</td>';
                         echo '<td>' . $row['date'] . '</td>';
-                        echo '<td><a class="btn btn-danger" href="syslog data delete page.php?id=' . $row['id'] . '">Delete</a>';
+                        echo '<td>' . $row['status'] . '</td>';
+                       // echo '<td><a class="btn btn-danger" href="syslog data delete page.php?date=' . $row['date'] . '">Delete</a>';
                         echo '</td>';
                         echo '</tr>';
                     }

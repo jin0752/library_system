@@ -28,11 +28,11 @@
     <meta charset="utf-8">
     <link   href="css/bootstrap.min.css" rel="stylesheet">
     <script src="js/bootstrap.min.js"></script>
-	<title>Delete : NodeMCU V3 ESP8266 / ESP12E with MYSQL Database</title>
+	<title>Delete </title>
 </head>
  
 <body>
-	<h2 align="center">NodeMCU V3 ESP8266 / ESP12E with MYSQL Database</h2>
+	<h2 align="center"></h2>
 
     <div class="container">
      

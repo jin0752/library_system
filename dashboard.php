@@ -1,3 +1,11 @@
+<?php
+include_once("database.php");
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +27,17 @@
                     <div class="head">
                         <div>
                             <h2>Number of Students</h2>
-                            <p>30</p>
+                            <p><?php
+                                $sql = "SELECT * from student_logs ";
+                                $num_row = mysqli_query($connection, $sql);
+
+                                if($num_row_total = mysqli_num_rows($num_row)){
+                                    echo "<h1>".$num_row_total."</h1>";
+                                }else{
+                                    echo "<h2> No DATA </h2>";
+                                }
+                                ?>
+                            </p>
                         </div>
                         <ion-icon name="people-outline"></ion-icon>
                     </div>
@@ -29,7 +47,16 @@
                     <div class="head">
                         <div>
                             <h2>Number of Books</h2>
-                            <p>30</p>
+                            <p><?php
+                                $sql = "SELECT * from books ";
+                                $num_row = mysqli_query($connection, $sql);
+
+                                if($num_row_total = mysqli_num_rows($num_row)){
+                                    echo "<h1>".$num_row_total."</h1>";
+                                }else{
+                                    echo "<h2> No DATA </h2>";
+                                }
+                                ?></p>
                         </div>
                         <ion-icon name="book-outline"></ion-icon>
                     </div>

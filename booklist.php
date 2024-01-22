@@ -25,7 +25,7 @@ if (isset($_POST['add'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <link rel="stylesheet" href="css/booklist.css">
+    <link rel="stylesheet" href="css/booklistt.css">
     <title>Book Lists</title>
     <link rel="icon" href="img/logo.png" type="image/icon type">
 </head>
@@ -40,10 +40,10 @@ if (isset($_POST['add'])){
     
     <div class="container"> 
         <h1>Book  List</h1>
-    <a href="#" id="button" class= "button">Add book</a>
+    <button type="submit" class="button">Add book</button>
     
     <div class ="modal-cont">
-        <div class="modal-content"> 
+        <div class="modal-conte"> 
         <label>Book Details</label>
         <div class="close">+</div>
             <form method="post">

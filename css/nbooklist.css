@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box ;
+}
+body{
+    padding-left: 100px;
+    background: #eee;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #379c44;
+    height: 60px;
+    z-index: 100;
+}
+.title{
+    font-size: 40px;
+    font-weight: 600px;
+}
+.content{
+    padding: 70px;
+}
+.table{
+    max-height: 500px;
+    overflow-y: scroll;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: white;
+}
+td,th{
+    padding: 12px;
+    text-align: left;
+}
+thead th{
+    background-color: #0bad39;
+    color: #FFF;
+    width: 10%;
+}
+
+tbody tr:nth-child(odd){
+    background-color: #ffffff;
+}
+
+tbody tr:nth-child(even){
+    background-color: #e7e7e7;
+}

@@ -40,7 +40,7 @@ if (isset($_POST['add'])){
     
     <div class="container"> 
         <h1>Book  List</h1>
-    <button type="submit" class="button">Add book</button>
+    <a href="#" class="modal-cont">Add book</a>
     
     <div class ="modal-cont">
         <div class="modal-conte"> 

@@ -41,7 +41,7 @@
                         </li>
 
                         <li class="navlink">
-                            <a href="booklist.php">
+                            <a href="nbooklist.php">
                                 <span class="icon"><ion-icon name="book-outline"></ion-icon></span>
                                 <span class="navtext text">Book list</span>
                             </a>

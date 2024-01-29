@@ -25,7 +25,7 @@ if (isset($_POST['add'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <link rel="stylesheet" href="css/booklistt.css">
+    <link rel="stylesheet" href="css/nbooklist.css">
     <title>Book Lists</title>
     <link rel="icon" href="img/logo.png" type="image/icon type">
 </head>

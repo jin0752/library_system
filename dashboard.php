@@ -11,7 +11,7 @@ include_once("database.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/dashboardd.css">
     <title>Dashboard</title>
     <link rel="icon" href="img/logo.png" type="image/icon type">
 </head>
@@ -32,7 +32,7 @@ include_once("database.php");
                                 $num_row = mysqli_query($connection, $sql);
 
                                 if($num_row_total = mysqli_num_rows($num_row)){
-                                    echo "<h1>".$num_row_total."</h1>";
+                                    echo "<h1 style='font-size:35px;'>".$num_row_total."</h1>";
                                 }else{
                                     echo "<h2> No DATA </h2>";
                                 }
@@ -52,7 +52,7 @@ include_once("database.php");
                                 $num_row = mysqli_query($connection, $sql);
 
                                 if($num_row_total = mysqli_num_rows($num_row)){
-                                    echo "<h1>".$num_row_total."</h1>";
+                                    echo "<h1 style='font-size:35px;'>".$num_row_total."</h1>";
                                 }else{
                                     echo "<h2> No DATA </h2>";
                                 }
@@ -66,7 +66,7 @@ include_once("database.php");
                     <div class="head">
                         <div>
                             <h2>Working Computers</h2>
-                            <p>20</p>
+                            <h1>20</h1>
                         </div>
                         <ion-icon name="desktop-outline"></ion-icon>
                     </div>

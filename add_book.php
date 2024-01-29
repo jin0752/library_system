@@ -22,8 +22,6 @@ if (isset($_POST['add'])){
 </head>
 <body>
     <form method="post">
-        <label>Cabinet Number</label>
-        <input type="text" name="cabnum"><br>
         <label>Book Title</label>
         <input type="text" name="title"><br>
         <label>Author</label>

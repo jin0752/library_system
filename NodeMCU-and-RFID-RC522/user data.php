@@ -91,7 +91,7 @@
                       <th>ID</th>
 					  <th>Gender</th>
 					  <th>Email</th>
-                      <th>Mobile Number</th>
+                      <th>Student Number</th>
 					  <th>Status</th>
 					  <th>Action</th>
                     </tr>
